@@ -11,11 +11,13 @@ class MyTodoListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var todoLabel: UILabel!
     
+    @IBOutlet weak var isDoneSwitch: UISwitch!
     @IBAction func isDoneSwitch(_ sender: UISwitch) {
     }
     
-    func configure(_ todoList: TodoModel) {
-        todoLabel.text = todoList.title
+    func configure(_ todo: TodoModel) {
+        todoLabel.text = todo.title
+        isDoneSwitch.isOn = todo.isDone
     }
     
 //    override func awakeFromNib() {

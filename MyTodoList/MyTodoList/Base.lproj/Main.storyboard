@@ -53,6 +53,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="isDoneSwitch" destination="KVm-Yl-H5E" id="8hu-g6-mV8"/>
                                             <outlet property="todoLabel" destination="2Df-xy-qZt" id="b3B-NC-0Ze"/>
                                         </connections>
                                     </tableViewCell>
