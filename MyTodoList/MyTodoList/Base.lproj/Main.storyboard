@@ -25,7 +25,7 @@
                                 <rect key="frame" x="10" y="89" width="373" height="729"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MXT-YH-UMd" customClass="MyTodoListTableViewCell" customModule="MyTodoList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTodoListTableViewCell" id="MXT-YH-UMd" customClass="MyTodoListTableViewCell" customModule="MyTodoList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="373" height="44.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MXT-YH-UMd" id="NZQ-Iw-wxb">
@@ -40,6 +40,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KVm-Yl-H5E">
                                                     <rect key="frame" x="314" y="7" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="isDoneSwitch:" destination="MXT-YH-UMd" eventType="valueChanged" id="iNQ-U3-UsR"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -49,6 +52,9 @@
                                                 <constraint firstItem="2Df-xy-qZt" firstAttribute="centerY" secondItem="NZQ-Iw-wxb" secondAttribute="centerY" id="VnE-5m-jOm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="todoLabel" destination="2Df-xy-qZt" id="b3B-NC-0Ze"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -31,8 +31,6 @@ extension MyTodoListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return tableView.dequeueReusableCell(withIdentifier: "MyTodoListTableViewCell", for: indexPath)  // tableView의 재사용가능한 셀을 가져옴
     }
-    
-    
 }
