@@ -13,6 +13,7 @@ class MyTodoListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var isDoneSwitch: UISwitch!
     @IBAction func isDoneSwitch(_ sender: UISwitch) {
+        print(sender.tag)
     }
     
     func configure(_ todo: TodoModel) {
