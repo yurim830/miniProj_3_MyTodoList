@@ -37,12 +37,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-UG-Ixp">
-                                                    <rect key="frame" x="10" y="17" width="30" height="27"/>
+                                                    <rect key="frame" x="10" y="14" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="h62-m9-uUU"/>
                                                         <constraint firstAttribute="width" constant="30" id="zX0-oq-Ko3"/>
                                                     </constraints>
-                                                    <imageReference key="image" image="heart.fill" catalog="system" renderingMode="hierarchical-single">
+                                                    <imageReference key="image" image="고양이" renderingMode="hierarchical-single">
                                                         <hierarchicalColors>
                                                             <color systemColor="labelColor"/>
                                                             <color systemColor="secondaryLabelColor"/>
@@ -51,16 +51,16 @@
                                                     </imageReference>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Le2-0e-VCH">
-                                                    <rect key="frame" x="50" y="10" width="254" height="37.666666666666664"/>
+                                                    <rect key="frame" x="45" y="10" width="259" height="37.666666666666664"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Df-xy-qZt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="20.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="259" height="20.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="130-9y-Yog" userLabel="deadLine">
-                                                            <rect key="frame" x="0.0" y="20.666666666666668" width="254" height="17.000000000000004"/>
+                                                            <rect key="frame" x="0.0" y="20.666666666666668" width="259" height="17.000000000000004"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -79,8 +79,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="KVm-Yl-H5E" secondAttribute="trailing" constant="10" id="KxB-Ku-fxH"/>
                                                 <constraint firstAttribute="bottom" secondItem="Le2-0e-VCH" secondAttribute="bottom" constant="10" id="LE8-uE-gkn"/>
                                                 <constraint firstItem="KVm-Yl-H5E" firstAttribute="centerY" secondItem="NZQ-Iw-wxb" secondAttribute="centerY" id="MWg-pR-Xab"/>
-                                                <constraint firstItem="Le2-0e-VCH" firstAttribute="leading" secondItem="Mri-UG-Ixp" secondAttribute="trailing" constant="10" id="Smp-ev-Wua"/>
-                                                <constraint firstItem="Mri-UG-Ixp" firstAttribute="top" secondItem="Le2-0e-VCH" secondAttribute="top" constant="5" id="W6y-gO-BOs"/>
+                                                <constraint firstItem="Le2-0e-VCH" firstAttribute="leading" secondItem="Mri-UG-Ixp" secondAttribute="trailing" constant="5" id="Smp-ev-Wua"/>
+                                                <constraint firstItem="Mri-UG-Ixp" firstAttribute="centerY" secondItem="Le2-0e-VCH" secondAttribute="centerY" id="Xgm-FM-0aM"/>
                                                 <constraint firstItem="Mri-UG-Ixp" firstAttribute="leading" secondItem="NZQ-Iw-wxb" secondAttribute="leading" constant="10" id="k8x-7n-7d5"/>
                                                 <constraint firstItem="Le2-0e-VCH" firstAttribute="top" secondItem="NZQ-Iw-wxb" secondAttribute="top" constant="10" id="np8-Oo-Iep"/>
                                             </constraints>
@@ -115,7 +115,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="고양이" width="894" height="916"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

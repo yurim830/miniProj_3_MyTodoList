@@ -23,12 +23,12 @@ class MyTodoListViewController: UIViewController {
     
     
     @IBAction func AddTodoButtonTapped(_ sender: AddTodoButton) { // sender를 설정 = 인스턴트 생성 => 코드 실행됨
-        let alert = UIAlertController(title: "할 일 추가", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "할 일 추가", message: "할 일과 마감기한을 입력하세요.", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel)          // 취소 버튼 생성 (액션 클로저는 nil)
         let ok = UIAlertAction(title: "확인", style: .default) { [weak self] _ in    // 확인 버튼 생성 및 액션 클로저 설정
-            guard let title = alert.textFields?[0] else { return }
+            guard let title = alert.textFields?[0], let deadLine = alert.textFields?[1] else { return }
             if title.text?.isEmpty != true {        // 클로저 선언부에 weak나 unknowned 키워드로 캡쳐목록을 정의하지 않고 클로저 본문에서 self 키워드로 클래스 인스턴스의 프로퍼티에 접근하게 되면 강한 순환참조가 발생해 메모리 누수가 발생될 수 있다.
-                let newTodo = TodoModel(id: self!.todoList.last!.id + 1, title: title.text!, isDone: false, deadLine: "deadline(코드 추가)")
+                let newTodo = TodoModel(id: self!.todoList.last!.id + 1, title: title.text!, isDone: false, deadLine: deadLine.text!)
                 self?.todoList.append(newTodo)
                 self?.tableView.reloadData()
             }
@@ -40,7 +40,9 @@ class MyTodoListViewController: UIViewController {
             tf.placeholder = "할 일을 입력하세요"
             tf.isSecureTextEntry = false
         })
-        
+        alert.addTextField(configurationHandler: { (tf) in
+            tf.placeholder = "마감기한을 입력하세요"
+        })
         self.present(alert, animated: true, completion: nil)
     }
 

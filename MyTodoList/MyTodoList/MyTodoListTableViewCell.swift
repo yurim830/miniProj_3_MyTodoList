@@ -24,7 +24,7 @@ class MyTodoListTableViewCell: UITableViewCell {
     func configure(_ todo: TodoModel) {
         todoLabel.attributedText = nil
         todoLabel.text = todo.title
-        deadLineLabel.text = "\(todo.deadLine)까지!"
+        deadLineLabel.text = todo.deadLine != "" ? "\(todo.deadLine)까지!" : ""
         isDoneSwitch.isOn = todo.isDone
         //onToggled?(isDoneSwitch.isOn)
         applyStrike(todo.isDone)
