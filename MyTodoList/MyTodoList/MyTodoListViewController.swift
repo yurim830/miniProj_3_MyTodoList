@@ -14,6 +14,14 @@ class MyTodoListViewController: UIViewController {
         TodoModel(id: 2, title: "Lv1 완성하기", isDone: false)
     ]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()       // super: 부모클래스의 viewDidLoad를 실행한다.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    
     @IBAction func AddTodoButtonTapped(_ sender: AddTodoButton) { // sender를 설정 = 인스턴트 생성 => 코드 실행됨
         let alert = UIAlertController(title: "할 일 추가", message: nil, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel)          // 취소 버튼 생성 (액션 클로저는 nil)
@@ -22,7 +30,7 @@ class MyTodoListViewController: UIViewController {
             if title.text?.isEmpty != true {        // 클로저 선언부에 weak나 unknowned 키워드로 캡쳐목록을 정의하지 않고 클로저 본문에서 self 키워드로 클래스 인스턴스의 프로퍼티에 접근하게 되면 강한 순환참조가 발생해 메모리 누수가 발생될 수 있다.
                 let newTodo = TodoModel(id: self!.todoList.count + 1, title: title.text!, isDone: false)
                 self?.todoList.append(newTodo)
-                self?.TableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
         alert.addAction(cancel)   //
@@ -36,14 +44,8 @@ class MyTodoListViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()       // super: 부모클래스의 viewDidLoad를 실행한다.
-        
-        TableView.dataSource = self
-    }
-
 }
 
 
@@ -61,15 +63,24 @@ extension MyTodoListViewController: UITableViewDataSource {
             // indexPath: cellForRowAt 메소드 파라미터. 이 위치에서 셀을 재사용.
             return UITableViewCell()
         }
-        //cell.isDoneSwitch.tag = indexPath.row
+        cell.isDoneSwitch.tag = indexPath.row
         // tableView의 재사용가능한 셀을 가져옴
-        let todo = todoList[indexPath.item]
+        let todo = todoList[indexPath.row]
+       
+        cell.onToggled = { isOn in
+            self.todoList[indexPath.row].isDone = isOn
+        }
         cell.configure(todo)
         return cell
     }
 }
 
 
+
+
+
 extension MyTodoListViewController: UITableViewDelegate {
-    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }

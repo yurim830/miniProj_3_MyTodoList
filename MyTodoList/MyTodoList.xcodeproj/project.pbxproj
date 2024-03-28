@@ -64,8 +64,8 @@
 			children = (
 				1A7173C32BAD97AD006AA5DF /* AppDelegate.swift */,
 				1A7173C52BAD97AD006AA5DF /* SceneDelegate.swift */,
-				1A8919D02BAD99E000CBF394 /* MyTodoListViewController.swift */,
 				1A8919D22BADB72C00CBF394 /* TodoModel.swift */,
+				1A8919D02BAD99E000CBF394 /* MyTodoListViewController.swift */,
 				1A8919D42BADBBC200CBF394 /* MyTodoListTableViewCell.swift */,
 				1A8706BB2BB14C56006FF963 /* AddTodoButton.swift */,
 				1A7173C92BAD97AD006AA5DF /* Main.storyboard */,
