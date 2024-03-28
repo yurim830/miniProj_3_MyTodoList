@@ -22,6 +22,7 @@ class MyTodoListViewController: UIViewController {
     }
     
     
+    
     @IBAction func AddTodoButtonTapped(_ sender: AddTodoButton) { // sender를 설정 = 인스턴트 생성 => 코드 실행됨
         let alert = UIAlertController(title: "할 일 추가", message: "할 일과 마감기한을 입력하세요.", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel)          // 취소 버튼 생성 (액션 클로저는 nil)
@@ -78,6 +79,6 @@ extension MyTodoListViewController: UITableViewDataSource {
     // swipe하여 버튼 클릭하면 delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         todoList.remove(at: indexPath.row)
-        tableView.reloadData()
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
     }
 }
