@@ -73,4 +73,10 @@ extension MyTodoListViewController: UITableViewDataSource {
         cell.configure(todo)
         return cell
     }
+    
+    // swipe하여 버튼 클릭하면 delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        todoList.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
 }
