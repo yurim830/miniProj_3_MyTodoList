@@ -10,8 +10,8 @@ import UIKit
 class MyTodoListViewController: UIViewController {
     
     var todoList: [TodoModel] = [
-        TodoModel(id: 1, title: "밥먹기", isDone: true),
-        TodoModel(id: 2, title: "Lv1 완성하기", isDone: false)
+        TodoModel(id: 1, title: "밥먹기", isDone: true, deadLine: "24/03/30"),
+        TodoModel(id: 2, title: "Lv1 완성하기", isDone: false, deadLine: "24/03/28")
     ]
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class MyTodoListViewController: UIViewController {
         let ok = UIAlertAction(title: "확인", style: .default) { [weak self] _ in    // 확인 버튼 생성 및 액션 클로저 설정
             guard let title = alert.textFields?[0] else { return }
             if title.text?.isEmpty != true {        // 클로저 선언부에 weak나 unknowned 키워드로 캡쳐목록을 정의하지 않고 클로저 본문에서 self 키워드로 클래스 인스턴스의 프로퍼티에 접근하게 되면 강한 순환참조가 발생해 메모리 누수가 발생될 수 있다.
-                let newTodo = TodoModel(id: self!.todoList.last!.id + 1, title: title.text!, isDone: false)
+                let newTodo = TodoModel(id: self!.todoList.last!.id + 1, title: title.text!, isDone: false, deadLine: "deadline(코드 추가)")
                 self?.todoList.append(newTodo)
                 self?.tableView.reloadData()
             }

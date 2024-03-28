@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIJ-ZE-eqz" customClass="AddTodoButton" customModule="MyTodoList" customModuleProvider="target">
-                                <rect key="frame" x="310" y="59" width="83" height="35"/>
+                                <rect key="frame" x="310" y="59" width="83" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="추가하기"/>
                                 <connections>
@@ -29,36 +30,63 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTodoListTableViewCell" id="MXT-YH-UMd" customClass="MyTodoListTableViewCell" customModule="MyTodoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="44.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="373" height="57.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MXT-YH-UMd" id="NZQ-Iw-wxb">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="44.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="57.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Df-xy-qZt">
-                                                    <rect key="frame" x="10" y="12" width="290" height="21"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-UG-Ixp">
+                                                    <rect key="frame" x="10" y="17" width="30" height="27"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="290" id="ZfS-oN-Ubl"/>
+                                                        <constraint firstAttribute="height" constant="30" id="h62-m9-uUU"/>
+                                                        <constraint firstAttribute="width" constant="30" id="zX0-oq-Ko3"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <imageReference key="image" image="heart.fill" catalog="system" renderingMode="hierarchical-single">
+                                                        <hierarchicalColors>
+                                                            <color systemColor="labelColor"/>
+                                                            <color systemColor="secondaryLabelColor"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Le2-0e-VCH">
+                                                    <rect key="frame" x="50" y="10" width="254" height="37.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Df-xy-qZt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="130-9y-Yog" userLabel="deadLine">
+                                                            <rect key="frame" x="0.0" y="20.666666666666668" width="254" height="17.000000000000004"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KVm-Yl-H5E">
-                                                    <rect key="frame" x="314" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="314" y="13.333333333333336" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="isSwitchToggled:" destination="MXT-YH-UMd" eventType="valueChanged" id="a48-SU-Ase"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="KVm-Yl-H5E" firstAttribute="leading" secondItem="Le2-0e-VCH" secondAttribute="trailing" constant="10" id="7Lv-EH-9sK"/>
                                                 <constraint firstAttribute="trailing" secondItem="KVm-Yl-H5E" secondAttribute="trailing" constant="10" id="KxB-Ku-fxH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Le2-0e-VCH" secondAttribute="bottom" constant="10" id="LE8-uE-gkn"/>
                                                 <constraint firstItem="KVm-Yl-H5E" firstAttribute="centerY" secondItem="NZQ-Iw-wxb" secondAttribute="centerY" id="MWg-pR-Xab"/>
-                                                <constraint firstItem="2Df-xy-qZt" firstAttribute="leading" secondItem="NZQ-Iw-wxb" secondAttribute="leading" constant="10" id="Rbd-ZE-jaL"/>
-                                                <constraint firstItem="2Df-xy-qZt" firstAttribute="centerY" secondItem="NZQ-Iw-wxb" secondAttribute="centerY" id="VnE-5m-jOm"/>
+                                                <constraint firstItem="Le2-0e-VCH" firstAttribute="leading" secondItem="Mri-UG-Ixp" secondAttribute="trailing" constant="10" id="Smp-ev-Wua"/>
+                                                <constraint firstItem="Mri-UG-Ixp" firstAttribute="top" secondItem="Le2-0e-VCH" secondAttribute="top" constant="5" id="W6y-gO-BOs"/>
+                                                <constraint firstItem="Mri-UG-Ixp" firstAttribute="leading" secondItem="NZQ-Iw-wxb" secondAttribute="leading" constant="10" id="k8x-7n-7d5"/>
+                                                <constraint firstItem="Le2-0e-VCH" firstAttribute="top" secondItem="NZQ-Iw-wxb" secondAttribute="top" constant="10" id="np8-Oo-Iep"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="deadLineLabel" destination="130-9y-Yog" id="jLt-Vk-N0x"/>
                                             <outlet property="isDoneSwitch" destination="KVm-Yl-H5E" id="8hu-g6-mV8"/>
                                             <outlet property="todoLabel" destination="2Df-xy-qZt" id="b3B-NC-0Ze"/>
                                         </connections>
@@ -87,8 +115,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

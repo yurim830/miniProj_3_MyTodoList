@@ -11,4 +11,5 @@ struct TodoModel {
     var id: Int
     var title: String
     var isDone: Bool
+    var deadLine: String
 }

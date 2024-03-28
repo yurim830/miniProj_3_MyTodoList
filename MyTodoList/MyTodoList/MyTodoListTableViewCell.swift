@@ -11,6 +11,7 @@ class MyTodoListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var todoLabel: UILabel!
     
+    @IBOutlet weak var deadLineLabel: UILabel!
     @IBOutlet weak var isDoneSwitch: UISwitch!
     
     var onToggled: ((Bool) -> Void)?
@@ -23,6 +24,7 @@ class MyTodoListTableViewCell: UITableViewCell {
     func configure(_ todo: TodoModel) {
         todoLabel.attributedText = nil
         todoLabel.text = todo.title
+        deadLineLabel.text = "\(todo.deadLine)까지!"
         isDoneSwitch.isOn = todo.isDone
         //onToggled?(isDoneSwitch.isOn)
         applyStrike(todo.isDone)
