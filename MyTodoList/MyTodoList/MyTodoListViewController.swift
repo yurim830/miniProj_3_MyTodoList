@@ -18,7 +18,7 @@ class MyTodoListViewController: UIViewController {
         super.viewDidLoad()       // super: 부모클래스의 viewDidLoad를 실행한다.
         
         tableView.dataSource = self
-        tableView.delegate = self
+        //tableView.delegate = self
     }
     
     
@@ -73,14 +73,4 @@ extension MyTodoListViewController: UITableViewDataSource {
         cell.configure(todo)
         return cell
     }
-}
-
-
-
-
-
-extension MyTodoListViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
 }
