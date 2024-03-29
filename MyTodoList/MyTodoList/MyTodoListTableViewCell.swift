@@ -34,7 +34,7 @@ class MyTodoListTableViewCell: UITableViewCell {
     func applyStrike(_ isDone: Bool) {
         if isDone {
             todoLabel.attributedText = todoLabel.text?.strikeThrough()
-            //todoLabel.textColor = .red
+            todoLabel.textColor = .gray
         } else {
             todoLabel.attributedText = todoLabel.text?.deStrikeThrough()
             //todoLabel.textColor = .blue
