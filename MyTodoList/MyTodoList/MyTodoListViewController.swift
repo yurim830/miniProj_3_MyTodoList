@@ -76,6 +76,7 @@ extension MyTodoListViewController: UITableViewDataSource {
             self.todoList[indexPath.row].isDone = isOn
         }
         cell.configure(todo)
+        cell.selectionStyle = .none
         return cell
     }
     // swipe하여 버튼 클릭하면 delete
@@ -83,4 +84,5 @@ extension MyTodoListViewController: UITableViewDataSource {
         todoList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
     }
+    
 }

@@ -40,7 +40,6 @@ class MyTodoListTableViewCell: UITableViewCell {
             todoLabel.textColor = .black
         }
     }
-    
 
 }
 
