@@ -31,7 +31,9 @@ class MyTodoListViewController: UIViewController {
             if title.text?.isEmpty != true {        // 클로저 선언부에 weak나 unknowned 키워드로 캡쳐목록을 정의하지 않고 클로저 본문에서 self 키워드로 클래스 인스턴스의 프로퍼티에 접근하게 되면 강한 순환참조가 발생해 메모리 누수가 발생될 수 있다.
                 let newTodo = TodoModel(id: self!.todoList.last!.id + 1, title: title.text!, isDone: false, deadLine: deadLine.text!)
                 self?.todoList.append(newTodo)
-                self?.tableView.reloadData()
+                //self?.tableView.reloadData()
+                let indexPath = IndexPath(row: (self?.todoList.count)! - 1, section: 0)
+                self?.tableView.insertRows(at: [indexPath], with: .automatic)
             }
         }
         alert.addAction(cancel)   //
